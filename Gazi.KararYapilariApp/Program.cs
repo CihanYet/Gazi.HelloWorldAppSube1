@@ -68,21 +68,63 @@
             //    Console.WriteLine(msg5);
             //}    
 
-            Console.WriteLine("Hava nasıl?");
-            string durum = Console.ReadLine().ToLower();
+            try
+            {
+                Console.WriteLine("Hava nasıl?");
+                string durum = Console.ReadLine().ToLower();
 
-            if (durum == "güzel" || durum=="iyi")
-            {
-                Console.WriteLine("Dışarı çık");
+                if (durum == "güzel" || durum == "iyi")
+                {
+                    Console.WriteLine("Kaç derece?");
+                    sbyte derece = sbyte.Parse(Console.ReadLine());
+                    if (derece < 15)
+                    {
+                        Console.WriteLine("Hava soğuk evde otur");
+                    }
+                    else if (derece >= 15 && derece <= 40)
+                    {
+                        Console.WriteLine("Hava iyi dışarı çık");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Çok sıcak evde otur");
+                    }
+                }
+                else if (durum == "kötü")
+                {
+                    Console.WriteLine("Evde otur");
+                }
+                else
+                {
+                    Console.WriteLine("Hatalı giriş");
+                }
             }
-            else if (durum == "kötü")
+            catch (Exception)
             {
-                Console.WriteLine("Evde otur");
+
+                throw;
             }
-            else
-            {
-                Console.WriteLine("Hatalı giriş");
-            }
+
+
+            //try
+            //{
+            //    Console.WriteLine("Bir sayı giriniz:");
+            //    byte sayi = byte.Parse(Console.ReadLine());
+            //}
+            //catch (FormatException)
+            //{
+            //    Console.WriteLine("Sadece sayı giriniz");
+            //}
+            //catch (OverflowException)
+            //{
+            //    Console.WriteLine("0-255 arası sayı giriniz");
+            //}
+            //catch (Exception)
+            //{
+            //    Console.WriteLine("Bilinmeyen bir hata oluştu!");
+            //}
+
+
         }
     }
 }
@@ -94,4 +136,6 @@
 //Result: 30
 
 //Dil seçiniz/Select Language:TR
+
+//Exception Handling - Hata Yakalama
 
