@@ -8,10 +8,13 @@
             //byte a;
             //a = 30;
 
-            //byte b= 30;
-            //Console.WriteLine(a);
+            //byte b;
+            //Console.WriteLine(b);
 
-            //const int number = 100;
+            //var rnd = new Random();
+            //byte sonuc = (byte)rnd.Next(5, 10);
+
+            //const int number = 100;           
             //Console.WriteLine(number);  
             //number = 50;
             //Console.WriteLine(number);  
@@ -45,8 +48,24 @@
             //string isim = Console.ReadLine();
             //Console.WriteLine("Soyadınızı Giriniz:");
             //string soyad = Console.ReadLine();
-            //Console.WriteLine("Yaşınızı giriniz:");
-            //byte yas = byte.Parse(Console.ReadLine());
+            try
+            {
+                Console.WriteLine("Yaşınızı giriniz:");
+                byte yas = byte.Parse(Console.ReadLine());
+            }            
+            catch (FormatException)
+            {
+                Console.WriteLine("Sayı ile giriniz");
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("0-255 arası değer giriniz");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Bir hata oluştu!");
+                Console.WriteLine($"Hata Mesajı:{ex.Message}\nTarih:{DateTime.Now}\nDetaylar:{ex.StackTrace}");
+            }
             //Console.WriteLine($"Hoşgeldin {isim} {soyad}");
 
             //C# Tip Güvenliği (Type Safety) sağlayan bir programlama dilidir. Bu özellik, veri tipine uygun olmayan tipte değer atanmasının önüne geçer.Eğer bu değeri uygun hale getirerek atamak istersek, TÜR DÖNÜŞÜMÜ(Type Casting) yapmamız gerekir.
@@ -70,9 +89,9 @@
 
             //checked
             //{
-            //    int sayi = 255;
+            //    int sayi = 256;
             //    byte number = (byte)sayi;//Explicit Type Casting
-            //    Console.WriteLine(number); 
+            //    Console.WriteLine(number);
             //}
             //Büyük tür->Küçük tür RİSK: Değer kaybı
 

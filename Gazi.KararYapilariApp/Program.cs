@@ -68,42 +68,42 @@
             //    Console.WriteLine(msg5);
             //}    
 
-            try
-            {
-                Console.WriteLine("Hava nasıl?");
-                string durum = Console.ReadLine().ToLower();
+            //try
+            //{
+            //    Console.WriteLine("Hava nasıl?");
+            //    string durum = Console.ReadLine().ToLower();
 
-                if (durum == "güzel" || durum == "iyi")
-                {
-                    Console.WriteLine("Kaç derece?");
-                    sbyte derece = sbyte.Parse(Console.ReadLine());
-                    if (derece < 15)
-                    {
-                        Console.WriteLine("Hava soğuk evde otur");
-                    }
-                    else if (derece >= 15 && derece <= 40)
-                    {
-                        Console.WriteLine("Hava iyi dışarı çık");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Çok sıcak evde otur");
-                    }
-                }
-                else if (durum == "kötü")
-                {
-                    Console.WriteLine("Evde otur");
-                }
-                else
-                {
-                    Console.WriteLine("Hatalı giriş");
-                }
-            }
-            catch (Exception)
-            {
+            //    if (durum == "güzel" || durum == "iyi")
+            //    {
+            //        Console.WriteLine("Kaç derece?");
+            //        sbyte derece = sbyte.Parse(Console.ReadLine());
+            //        if (derece < 15)
+            //        {
+            //            Console.WriteLine("Hava soğuk evde otur");
+            //        }
+            //        else if (derece >= 15 && derece <= 40)
+            //        {
+            //            Console.WriteLine("Hava iyi dışarı çık");
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("Çok sıcak evde otur");
+            //        }
+            //    }
+            //    else if (durum == "kötü")
+            //    {
+            //        Console.WriteLine("Evde otur");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Hatalı giriş");
+            //    }
+            //}
+            //catch (Exception)
+            //{
 
-                throw;
-            }
+            //    throw;
+            //}
 
 
             //try
@@ -125,6 +125,42 @@
             //}
 
 
+            Console.WriteLine("Bir sayı giriniz:");
+            byte sayi = byte.Parse(Console.ReadLine());
+
+            if (sayi == 1)
+            {
+                Console.WriteLine("Bir");
+            }
+            else if (sayi == 2)
+            {
+                Console.WriteLine("İki");
+
+            }
+            else if (sayi == 3)
+            {
+                Console.WriteLine("Üç");
+            }
+            else
+            {
+                Console.WriteLine("Yanlış giriş");
+            }
+
+            switch (sayi)
+            {
+                case 1:
+                    Console.WriteLine("Bir");
+                    break;
+                case 2:
+                    Console.WriteLine("İki");
+                    break;
+                case 3:
+                    Console.WriteLine("Üç");
+                    break;
+                default:
+                    Console.WriteLine("Yanlış giriş!");
+                    break;
+            }
         }
     }
 }
